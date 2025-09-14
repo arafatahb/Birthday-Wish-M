@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Mahi 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe Script", cursive, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7, #a18cd1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Gradient animation */
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      max-width: 900px;
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+    }
+
+    h1, p {
+      font-size: 2em;
+      line-height: 1.5;
+      text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+      animation: popIn 2s ease-in-out;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes popIn {
+      0% {transform: scale(0.7); opacity: 0;}
+      100% {transform: scale(1); opacity: 1;}
+    }
+
+    /* Floating balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      background: radial-gradient(circle at 30% 30%, #fff, transparent), #ff6ec4;
+      border-radius: 50% 50% 50% 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      background: #fff;
+    }
+    @keyframes float {
+      0% {transform: translateY(0) rotate(0);}
+      50% {transform: translateY(-300px) rotate(10deg);}
+      100% {transform: translateY(0) rotate(0);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Balloons for vibe -->
+  <div class="balloon" style="left:10%; background:#ff9a9e; animation-duration:7s;"></div>
+  <div class="balloon" style="left:30%; background:#fad0c4; animation-duration:9s;"></div>
+  <div class="balloon" style="left:50%; background:#a1c4fd; animation-duration:11s;"></div>
+  <div class="balloon" style="left:70%; background:#fbc2eb; animation-duration:8s;"></div>
+  <div class="balloon" style="left:85%; background:#ffdde1; animation-duration:10s;"></div>
+
+  <div class="container" id="messageBox">
+    <h1>🌸✨ Happy Birthday, My Dearest Mahi! ✨🌸</h1>
+    <button class="btn" onclick="nextMessage()">Next ➡️</button>
+  </div>
+
+  <script>
+    const messages = [
+      "🌸✨ Happy Birthday, My Dearest Mahi! ✨🌸",
+      "On this very special day, I want to celebrate not just your birthday, but you—the most precious soul I’ve been blessed to know. 💖 From the moment you entered my life, everything felt brighter, softer, and more meaningful. 🌟",
+      "Mahi, you are not just a friend—you are my closest companion, my safe place, my soul connection, and my forever special person. 💕 Whenever I think of true friendship, love, and trust, your name comes to my heart first.",
+      "You are the kind of person who makes the world more beautiful simply by being in it. 🌍🌹 Your smile has the power to heal, your words bring peace, and your presence feels like home. 🏡💫",
+      "On your birthday today, I pray for nothing but the purest happiness for you. May your days be filled with endless laughter 😄, your nights with peace 🌙✨, and your life with love, success, and countless blessings 🌈🤍.",
+      "Remember this always—you are irreplaceable in my life. No matter where destiny takes us, you’ll always be my closest, special, soulmate friend. 🫶💞",
+      "So here’s to you, Mahi—<br>🌹 A heart as soft as a flower,<br>🔥 A soul as bright as the stars,<br>💎 And a bond that will remain forever unbreakable.",
+      "Happy Birthday once again, my dearest Mahi! 🥳🎂✨ May this year bring you everything your heart desires, and may you always shine just the way you do in my life. 🌟💖🌸",
+      "With endless love, prayers, and respect,<br>— From the one who feels lucky to have you in their life 💕",
+      "Sorry for writing too much. And also sorry for my previous all behaviours.<br><br>✨ Best of luck for your College life ✨"
+    ];
+
+    let index = 0;
+    function nextMessage() {
+      index++;
+      if (index < messages.length) {
+        document.getElementById("messageBox").innerHTML = `
+          <p>${messages[index]}</p>
+          <button class="btn" onclick="nextMessage()">Next ➡️</button>
+        `;
+      } else {
+        document.getElementById("messageBox").innerHTML = `
+          <p>🎉 The End 🎉</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
