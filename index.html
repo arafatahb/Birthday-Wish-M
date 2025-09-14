@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy Birthday Mahi 🎉</title>
+  <!-- Fantasy-style Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: "Segoe Script", cursive, sans-serif;
+      font-family: "Great Vibes", fantasy;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -38,8 +40,8 @@
     }
 
     h1, p {
-      font-size: 2em;
-      line-height: 1.5;
+      font-size: 2.5em;
+      line-height: 1.6;
       text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
       animation: popIn 2s ease-in-out;
     }
@@ -47,7 +49,7 @@
     .btn {
       margin-top: 30px;
       padding: 12px 25px;
-      font-size: 1.2em;
+      font-size: 1.3em;
       border: none;
       border-radius: 25px;
       background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
@@ -55,10 +57,25 @@
       cursor: pointer;
       transition: 0.3s;
       animation: fadeInUp 2s ease-in-out;
+      font-family: "Great Vibes", fantasy;
     }
     .btn:hover {
       transform: scale(1.1);
       box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+    }
+
+    /* Last message special style */
+    .last-message {
+      font-size: 3.5em;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 3px 3px 20px rgba(0,0,0,0.6), 0 0 25px #ffb6c1, 0 0 40px #ff69b4;
+      animation: popIn 2s ease-in-out, glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 3px 3px 20px rgba(0,0,0,0.6), 0 0 15px #ffb6c1, 0 0 30px #ff69b4; }
+      to { text-shadow: 3px 3px 25px rgba(0,0,0,0.7), 0 0 25px #ff69b4, 0 0 50px #ff1493; }
     }
 
     /* Animations */
@@ -125,7 +142,7 @@
       "So here’s to you, Mahi—<br>🌹 A heart as soft as a flower,<br>🔥 A soul as bright as the stars,<br>💎 And a bond that will remain forever unbreakable.",
       "Happy Birthday once again, my dearest Mahi! 🥳🎂✨ May this year bring you everything your heart desires, and may you always shine just the way you do in my life. 🌟💖🌸",
       "With endless love, prayers, and respect,<br>— From the one who feels lucky to have you in their life 💕",
-      "Sorry for writing too much. And also sorry for my previous all behaviours.<br><br>✨ Best of luck for your College life ✨"
+      "<span class='last-message'>Sorry for writing too much.<br>And also sorry for my previous all behaviours.<br><br>✨ Best of luck for your College life ✨</span>"
     ];
 
     let index = 0;
